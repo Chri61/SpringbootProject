@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: HO(23h4iu%&*23b23)gfGI32i4b
+    url: jdbc:mysql://127.0.0.1:3306/sell?characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
+  jpa:
+    show-sql: true
+  # 属性为null时，不返回给前端
+  jackson:
+    default-property-inclusion: non_null
+
+server:
+  port: 8909
+  servlet:
+    context-path: /sell
+
+
+wechat:
+  mpAppId: wx097a95dfbb31f2b1
+  mpAppSecret: 0076681044a0dee6aeef043428460885
+
+  # 支付用到的
+  #商户id/支付平台的账号
+  mchId: t123
+  mchKey: t123
+  # 证书。发起支付不需要，退款需要
+  keyPath: C:\\log
+  notifyUrl: http://sell.com/pay/notify

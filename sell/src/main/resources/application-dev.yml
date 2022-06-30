@@ -1,0 +1,69 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: ABCabc123
+    #    password: HO(23h4iu%&*23b23)gfGI32i4b
+    url: jdbc:mysql://127.0.0.1:3306/sell?characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
+  jpa:
+    show-sql: true
+  # 属性为null时，不返回给前端
+  jackson:
+    default-property-inclusion: non_null
+  # html视图
+#  freemarker:
+#    template-loader-path: classpath:/templates/
+  redis:
+    password: dzkj123
+
+# tomcat
+server:
+  port: 8909
+  servlet:
+    context-path: /sell
+
+# mybatis中xml文件的扫描配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+
+wechat:
+  # 微信公众号里登录用到的
+  mpAppId: wx097a95dfbb31f2b1
+  mpAppSecret: 0076681044a0dee6aeef043428460885
+  # 公众开放平台，卖家网页登录用到的
+  openAppID: wx097a95dfbb31f2b1111
+  openAppSecret: 0076681044a0dee6aeef0434284608851111
+  # 支付用到的
+  # 商户id/支付平台的账号，个人注册的没法用
+  mchId: t123
+  mchKey: t123
+  # 证书。发起支付不需要，退款需要
+  keyPath: C:\\log
+  notifyUrl: http://sell.com/sell/pay/notify
+  # 模板消息
+  templateId:
+    orderStatus: UYXsCuUHshQpj2fUj1OCA8iOcuZ_U8H7oMMxZUOddjw
+
+
+#project:
+#  wechatMpAuthorize: http://sell.ngrok2.xiaomiqiu.cn
+#  wechatOpenAuthoize: http://sell.ngrok2.xiaomiqiu.cn
+#  sell: http://sell.ngrok2.xiaomiqiu.cn
+
+project:
+  wechatMpAuthorize: http://127.0.0.1:8909
+  wechatOpenAuthoize: http://127.0.0.1:8909
+  sell: http://127.0.0.1:8909
+
+
+
+
+
+
+
+
+# 开发环境的日志
+logging:
+  level:
+    com.alone.sell.dataobject.mapper: trace
